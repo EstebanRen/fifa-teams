@@ -1,0 +1,24 @@
+<div class="pop-up-info">
+    <h2>
+        Iniciar Sesion
+    </h2>
+    <form [formGroup]="Form" #f="ngForm" class="content-form">
+        <div class="form-row">
+            <mat-form-field fxFlex="100" fxFlex.gt-xs="47.5" appearance="outline" class="no-padding">
+                <mat-label>Usuario</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput type="text"
+                    name="user_login" formControlName="user" placeholder="" />
+                <mat-error *ngIf="Form.value.user == ''">Debes poner un Nombre de Usuario</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex="100" fxFlex.gt-xs="47.5" appearance="outline" class="no-padding">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="text" autocomplete="off" appOnlyText minlength="3" maxlength="100" name="password_login"
+                    formControlName="password" placeholder="" />
+                <mat-error *ngIf="Form.value.password == ''">Debes poner una Contraseña</mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <button mat-raised-button color="primary" type="button" (click)="onClickLogin()">Iniciar Sesión</button>
+
+</div>

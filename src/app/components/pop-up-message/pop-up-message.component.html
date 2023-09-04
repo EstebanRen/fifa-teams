@@ -1,0 +1,15 @@
+<div class="pop-up-info">
+    <h2>{{data.title}}</h2>
+
+    <p>{{ data.message }}</p>
+
+    <div class="buttons-pup">
+        <button   mat-raised-button color="accent" (click)="deleteTeam()" > 
+            Eliminar
+        </button>
+        <button   mat-raised-button color="primary"  (click)="close()" > 
+            Cerrar
+        </button>
+    </div>
+
+</div>

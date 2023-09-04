@@ -1,0 +1,31 @@
+<div *ngFor="let team of teamsListData.content">
+    <div class="card" [matMenuTriggerFor]="lists" (click)="onClickSelectedTeam(team)"> 
+        <div class="card-image">
+            <img [src]="'assets/images/ball.jpg'" alt="Image" />
+        </div>
+        <div class="card-details">
+            <div class="name">
+                Entrenador :
+                <span class="tag featured">{{ team.entrenador }} !</span>
+                <span class="tag new" *ngIf="this.authenticated==true"> ID : {{ team.id }}</span>
+            </div>
+            <div class="title">{{ team.nombre }}</div>
+            <div class="text">
+                Estadio: {{ team.estadio }} &nbsp;&bull;&nbsp; Nacionalidad:
+                {{ team.nacionalidad }} &nbsp;&bull;&nbsp; Capacidad :
+                {{ team.capacidad }}
+            </div>
+        </div>
+        <div class="card-buttons">
+            <span class="role">
+                Fundacion : {{ team.fundacion | date : "yyyy-MM-dd" }}</span>
+            <span class="level"> Sitio Web : {{ team.sitioWeb }}</span>
+            <span class="level">
+                Valor :{{ team.valor | currency : "USD" : "symbol" }}</span>
+        </div>
+    </div>
+</div>
+<mat-menu #lists="matMenu"> 
+    <button mat-menu-item  [disabled]="authenticated==false" (click)="onClickDeleteTeam()">Eliminar</button>
+    <button mat-menu-item   [disabled]="authenticated==false" (click)="onClickEditTeam()">Editar</button>
+</mat-menu>

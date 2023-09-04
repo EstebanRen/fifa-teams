@@ -1,0 +1,22 @@
+.pop-up-info {
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  
+  .content-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; 
+  }
+  
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5%;
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,69 @@
+<div class="pop-up-info">
+    <h2 *ngIf="this.data!=undefined">
+        Editar  Equipo
+    </h2>
+    <h2 *ngIf="this.data==undefined">
+        Crear Equipo
+    </h2>
+    <form [formGroup]="Form" #f="ngForm" class="content-form">
+        <div class="form-teams">
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Nombre</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="text" name="name-team" formControlName="name" placeholder="" />
+                <mat-error *ngIf="Form.value.name == ''">Debes poner un Nombre de Equipo</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Estadio</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="text" name="stadium-team" formControlName="stadium" placeholder="" />
+                <mat-error *ngIf="Form.value.stadium == ''">Debes poner un Nombre de Estadio</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Sitio Web</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="url" name="website-team" formControlName="website" placeholder="" />
+                <mat-error *ngIf="Form.value.website == ''">Debes poner una url aceptable</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Nacionalidad</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="text" name="nationality-team" formControlName="nationality" placeholder="" />
+                <mat-error *ngIf="Form.value.nationality == ''">Debes poner una Nacionalidad</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Año de Fundación</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput 
+                type="date" name="foundationYear-team" formControlName="foundationYear" placeholder="" />
+                <mat-error *ngIf="Form.value.foundationYear == ''">Debes poner un Año de Fundación</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Entrenador</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="text" name="coach-team" formControlName="coach" placeholder="" />
+                <mat-error *ngIf="Form.value.coach == ''">Debes poner un Entrenador</mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Capacidad</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="number" name="capacity-team" formControlName="capacity" placeholder="" />
+                <mat-error *ngIf="Form.value.capacity == ''">Debes poner una Capacidad </mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex.gt-sm="50" fxFlex="100" appearance="outline" class="no-padding">
+                <mat-label>Valor</mat-label>
+                <input class="input-text" autocomplete="off" appOnlyText minlength="3" maxlength="100" matInput
+                    type="number" name="value-team" formControlName="value" placeholder="" />
+                <mat-error *ngIf="Form.value.value == ''">Debes poner un Valor </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <button mat-raised-button color="primary" type="button" (click)="onClickCreateTeam()" *ngIf="data==undefined">Crear Equipo</button>
+    <button mat-raised-button color="primary" type="button" (click)="onClickEditateTeam()" *ngIf="data!=undefined">Editar Equipo</button>
+
+</div>

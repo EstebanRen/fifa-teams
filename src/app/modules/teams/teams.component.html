@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="header background-image">
+  </div>
+  <div class="list">
+    <app-card-teams [teamsListData]="this.teamsListData" [authenticated]="this.authenticated"
+      (deleteTeam)="deleteTeam($event)" (editTeam)="editTeam($event)">
+    </app-card-teams>
+  </div>
+  <div class="overlay-div">
+    <app-filter-fifa (formLogin)="loginUser($event)" (logout)="logoutUser()" (formCreateTeam)="createTeam($event)"
+      [authenticated]="this.authenticated" (searchDate)="searchDate($event)" (searchID)="searchId($event)"
+      (searchAllTeams)="searchAllTeams()">
+    </app-filter-fifa>
+  </div>
+</div>
